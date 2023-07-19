@@ -7,8 +7,12 @@
 
 import Foundation
 
-
-class NetworkManager {
+// Conform to ObservableObject to broadcast properties to "interested parties"
+class NetworkManager: ObservableObject {
+    
+    // "Interested parties" will be notified of any changes
+    @Published var motorVehicles = [MotorVehicle]()
+    
     func fetchData() {
         //The url I am going to request to
         if let url = URL(string: "https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json") {
@@ -19,7 +23,11 @@ class NetworkManager {
                     let decoder = JSONDecoder()
                     if let safeData = data {
                         do {
+                            //Data from the api
                             let decoded = try decoder.decode(ResultsData.self, from: safeData)
+                            DispatchQueue.main.async {
+                                self.motorVehicles = decoded.Results
+                            }
                         } catch {
                             print(error)
                         }

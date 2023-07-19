@@ -8,17 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    //Listens for changes to motorVehicles in NetworkManager
+    @ObservedObject var networkManager = NetworkManager()
+    
     var body: some View {
         // Creating the root view
         NavigationStack {
             // List presents rows from the data provided
-            List(motorVehicles) { mV in
+            List(networkManager.motorVehicles) { mV in
                 // The Make's name fills each row
                 Text(mV.Make_Name)
             }
             
             // Title of the current view
             .navigationTitle("Motor Theory")
+        }
+        .onAppear {
+            networkManager.fetchData()
         }
     }
 }

@@ -14,7 +14,7 @@ struct ResultsData: Decodable {
 
 //Format of the data within the "Results" array that I will be using
 struct MotorVehicle: Decodable, Identifiable {
-    //Vakue of Make_ID needs to conform to "id" requirement
+    //Value of Make_ID needs to conform to "id" requirement
     var id: Int {
         return Make_ID
     }
