@@ -28,16 +28,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-// Each motor vehicle instance should provide this data
-struct motorVehicle: Identifiable {
-    let id: String
-    let Make_Name: String
-}
-
-// List of motor vehicle makes with a corresponding id
-let motorVehicles = [
-    motorVehicle(id: "1", Make_Name: "Audi"),
-    motorVehicle(id: "2", Make_Name: "Lamborghini"),
-    motorVehicle(id: "3", Make_Name: "Ferrari")
-]

@@ -11,6 +11,8 @@
 		0295C9772A6882B1009280FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295C9762A6882B1009280FC /* ContentView.swift */; };
 		0295C9792A6882B4009280FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0295C9782A6882B4009280FC /* Assets.xcassets */; };
 		0295C97C2A6882B4009280FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0295C97B2A6882B4009280FC /* Preview Assets.xcassets */; };
+		0295C9842A68897C009280FC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295C9832A68897C009280FC /* NetworkManager.swift */; };
+		0295C9862A688C06009280FC /* MotorVehicleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295C9852A688C06009280FC /* MotorVehicleData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		0295C9762A6882B1009280FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0295C9782A6882B4009280FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0295C97B2A6882B4009280FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0295C9832A68897C009280FC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0295C9852A688C06009280FC /* MotorVehicleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorVehicleData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 		0295C9732A6882B1009280FC /* Motor Theory */ = {
 			isa = PBXGroup;
 			children = (
+				0295C9822A68896D009280FC /* Models */,
 				0295C9742A6882B1009280FC /* Motor_TheoryApp.swift */,
 				0295C9762A6882B1009280FC /* ContentView.swift */,
 				0295C9782A6882B4009280FC /* Assets.xcassets */,
@@ -65,6 +70,15 @@
 				0295C97B2A6882B4009280FC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0295C9822A68896D009280FC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0295C9832A68897C009280FC /* NetworkManager.swift */,
+				0295C9852A688C06009280FC /* MotorVehicleData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0295C9862A688C06009280FC /* MotorVehicleData.swift in Sources */,
+				0295C9842A68897C009280FC /* NetworkManager.swift in Sources */,
 				0295C9772A6882B1009280FC /* ContentView.swift in Sources */,
 				0295C9752A6882B1009280FC /* Motor_TheoryApp.swift in Sources */,
 			);
