@@ -12,6 +12,7 @@ class NetworkManager: ObservableObject {
     
     // "Interested parties" will be notified of any changes
     @Published var motorVehicles = [MotorVehicle]()
+    @Published var filteredVehicles = [MotorVehicle]()
     
     func fetchData() {
         //The url I am going to request to
@@ -27,6 +28,9 @@ class NetworkManager: ObservableObject {
                             let decoded = try decoder.decode(ResultsData.self, from: safeData)
                             DispatchQueue.main.async {
                                 self.motorVehicles = decoded.Results
+                                self.filteredVehicles = self.motorVehicles.filter({ MotorVehicle in
+                                    MotorVehicle.Make_Name == "AUDI" || MotorVehicle.Make_Name == "BENTLEY"
+                                })
                             }
                         } catch {
                             print(error)

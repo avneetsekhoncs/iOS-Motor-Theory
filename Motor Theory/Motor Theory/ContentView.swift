@@ -16,7 +16,7 @@ struct ContentView: View {
         // Creating the root view
         NavigationStack {
             // List presents rows from the data provided
-            List(networkManager.motorVehicles) { mV in
+            List(networkManager.filteredVehicles) { mV in
                 // The Make's name fills each row
                 Text(mV.Make_Name)
             }
