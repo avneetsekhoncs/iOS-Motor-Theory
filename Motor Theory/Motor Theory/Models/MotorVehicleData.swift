@@ -12,6 +12,10 @@ struct ResultsData: Decodable {
     let Results: [MotorVehicle]
 }
 
+struct ModelsData: Decodable {
+    let Results: [MotorVehicleModels]
+}
+
 //Format of the data within the "Results" array that I will be using
 struct MotorVehicle: Decodable, Identifiable {
     //Value of Make_ID needs to conform to "id" requirement
@@ -21,4 +25,13 @@ struct MotorVehicle: Decodable, Identifiable {
     
     let Make_ID: Int
     let Make_Name: String
+}
+
+struct MotorVehicleModels: Decodable, Identifiable {
+    var id: Int {
+        return Model_ID
+    }
+    
+    let Model_ID: Int
+    let Model_Name: String
 }

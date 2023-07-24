@@ -17,8 +17,11 @@ struct ContentView: View {
         NavigationStack {
             // List presents rows from the data provided
             List(networkManager.filteredVehicles) { mV in
-                // The Make's name fills each row
-                Text(mV.Make_Name)
+                //vehicleMake is passed to the destination
+                NavigationLink(destination: ModelView(vehicleMake: mV.Make_Name)) {
+                    // The Make's name fills each row
+                    Text(mV.Make_Name)
+                }
             }
             
             // Title of the current view
