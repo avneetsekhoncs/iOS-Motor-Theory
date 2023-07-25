@@ -14,6 +14,8 @@
 		0295C9842A68897C009280FC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295C9832A68897C009280FC /* NetworkManager.swift */; };
 		0295C9862A688C06009280FC /* MotorVehicleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295C9852A688C06009280FC /* MotorVehicleData.swift */; };
 		0295C98A2A6F1C53009280FC /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295C9892A6F1C53009280FC /* ModelView.swift */; };
+		0295C98C2A705800009280FC /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295C98B2A705800009280FC /* DetailView.swift */; };
+		0295C98E2A706177009280FC /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0295C98D2A706177009280FC /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		0295C9852A688C06009280FC /* MotorVehicleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorVehicleData.swift; sourceTree = "<group>"; };
 		0295C9872A68A348009280FC /* Motor-Theory-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Motor-Theory-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0295C9892A6F1C53009280FC /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
+		0295C98B2A705800009280FC /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		0295C98D2A706177009280FC /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 			children = (
 				0295C9762A6882B1009280FC /* ContentView.swift */,
 				0295C9892A6F1C53009280FC /* ModelView.swift */,
+				0295C98B2A705800009280FC /* DetailView.swift */,
+				0295C98D2A706177009280FC /* WebView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,10 +171,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0295C9862A688C06009280FC /* MotorVehicleData.swift in Sources */,
+				0295C98C2A705800009280FC /* DetailView.swift in Sources */,
 				0295C9842A68897C009280FC /* NetworkManager.swift in Sources */,
 				0295C9772A6882B1009280FC /* ContentView.swift in Sources */,
 				0295C9752A6882B1009280FC /* Motor_TheoryApp.swift in Sources */,
 				0295C98A2A6F1C53009280FC /* ModelView.swift in Sources */,
+				0295C98E2A706177009280FC /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

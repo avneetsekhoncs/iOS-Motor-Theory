@@ -15,9 +15,14 @@ struct ModelView: View {
     let vehicleMake: String
     
     var body: some View {
+        
         NavigationStack {
             List(networkManager.motorVehicleModels) { mVM in
-                Text(mVM.Model_Name)
+                
+                let url = "https://en.wikipedia.org/wiki/\(vehicleMake.lowercased())_\(mVM.Model_Name)"
+                NavigationLink(destination: DetailView(makeModelString: url)) {
+                    Text(mVM.Model_Name)
+                }
             }
             .navigationTitle(vehicleMake)
         }
