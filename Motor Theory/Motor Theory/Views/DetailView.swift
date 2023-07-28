@@ -12,9 +12,7 @@ struct DetailView: View {
     let makeModelString: String
     
     var body: some View {
-        WebView(mmString: makeModelString).onAppear {
-            print(makeModelString)
-        }
+        WebView(mmString: makeModelString)
     }
 }
 

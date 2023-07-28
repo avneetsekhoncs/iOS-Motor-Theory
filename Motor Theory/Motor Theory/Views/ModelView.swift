@@ -21,7 +21,7 @@ struct ModelView: View {
         
         NavigationStack {
             List {
-                ForEach(modelResults, id: \.self) { mVM in
+                ForEach(modelResults.sorted {$0.Model_Name < $1.Model_Name}, id: \.self) { mVM in
                     
                     let baseURL = "https://en.wikipedia.org/wiki"
                     let model = mVM.Model_Name
@@ -39,15 +39,6 @@ struct ModelView: View {
             }
             .navigationTitle(vehicleMake)
             .searchable(text: $searchModel, placement: .navigationBarDrawer(displayMode: .always))
-            .onAppear {
-                    // Print the value of the url variable when the view appears
-                    let baseURL = "https://en.wikipedia.org/wiki"
-                    let model = modelResults.first?.Model_Name ?? ""
-                    let encodedVehicleMake = vehicleMake.replacingOccurrences(of: " ", with: "_").capitalized
-                    let encodedModel = model.replacingOccurrences(of: " ", with: "_")
-                    let url = "\(baseURL)/\(encodedVehicleMake)_\(encodedModel)"
-                    print("URL: \(url)")
-                }
         }
         .onAppear {
             networkManager.fetchModelData(makeName: vehicleMake.replacingOccurrences(of: " ", with: "%20"))
