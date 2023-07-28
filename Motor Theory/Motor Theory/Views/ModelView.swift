@@ -17,11 +17,9 @@ struct ModelView: View {
     let vehicleMake: String
     
     var body: some View {
-        
-        
         NavigationStack {
             List {
-                ForEach(modelResults.sorted {$0.Model_Name < $1.Model_Name}, id: \.self) { mVM in
+                ForEach(modelResults, id: \.self) { mVM in
                     
                     let baseURL = "https://en.wikipedia.org/wiki"
                     let model = mVM.Model_Name
@@ -37,7 +35,7 @@ struct ModelView: View {
                     }
                 }
             }
-            .navigationTitle(vehicleMake)
+            .navigationTitle(vehicleMake.capitalized)
             .searchable(text: $searchModel, placement: .navigationBarDrawer(displayMode: .always))
         }
         .onAppear {

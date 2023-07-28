@@ -30,7 +30,7 @@ class NetworkManager: ObservableObject {
                             //Data from the api
                             let decoded = try decoder.decode(ResultsData.self, from: safeData)
                             DispatchQueue.main.async {
-                                self.motorVehicles = decoded.Results
+                                self.motorVehicles = decoded.Results.sorted {$0.MakeName < $1.MakeName}
                                 /*self.filteredVehicles = self.motorVehicles.filter { motorVehicle in
                                     self.keepArray.contains(motorVehicle.Make_Name)
                                 }*/
@@ -59,7 +59,7 @@ class NetworkManager: ObservableObject {
                             //Data from the api
                             let decoded = try decoder.decode(ModelsData.self, from: safeData)
                             DispatchQueue.main.async {
-                                self.motorVehicleModels = decoded.Results
+                                self.motorVehicleModels = decoded.Results.sorted {$0.Model_Name < $1.Model_Name }
                             }
                         } catch {
                             print(error)

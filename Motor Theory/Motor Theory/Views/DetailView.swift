@@ -12,7 +12,7 @@ struct DetailView: View {
     let makeModelString: String
     
     var body: some View {
-        WebView(mmString: makeModelString)
+        WebView(mmString: makeModelString).navigationBarTitleDisplayMode(.inline)
     }
 }
 

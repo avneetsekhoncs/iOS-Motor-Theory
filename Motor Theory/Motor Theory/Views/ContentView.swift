@@ -19,7 +19,7 @@ struct ContentView: View {
         NavigationStack {
             // List presents rows from the data provided
             List {
-                ForEach(searchResults.sorted {$0.MakeName < $1.MakeName}, id: \.self) { mV in
+                ForEach(searchResults, id: \.self) { mV in
                     //vehicleMake is passed to the destination
                     NavigationLink(destination: ModelView(vehicleMake: mV.MakeName)) {
                         // The Make's name fills each row
