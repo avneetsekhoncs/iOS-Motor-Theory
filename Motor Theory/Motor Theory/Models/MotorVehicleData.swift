@@ -20,11 +20,11 @@ struct ModelsData: Decodable {
 struct MotorVehicle: Decodable, Identifiable, Hashable {
     //Value of Make_ID needs to conform to "id" requirement
     var id: Int {
-        return Make_ID
+        return MakeId
     }
     
-    let Make_ID: Int
-    let Make_Name: String
+    let MakeId: Int
+    let MakeName: String
 }
 
 struct MotorVehicleModels: Decodable, Identifiable, Hashable {

@@ -21,14 +21,13 @@ struct ContentView: View {
             List {
                 ForEach(searchResults, id: \.self) { mV in
                     //vehicleMake is passed to the destination
-                    NavigationLink(destination: ModelView(vehicleMake: mV.Make_Name.components(separatedBy: .whitespaces).joined())) {
+                    NavigationLink(destination: ModelView(vehicleMake: mV.MakeName)) {
                         // The Make's name fills each row
-                        Text(mV.Make_Name)
+                        Text(mV.MakeName)
                     }
                 }
             }
             .navigationTitle("Motor Theory")
-            .navigationBarTitleDisplayMode(.large)
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
         }
         .onAppear {
@@ -38,9 +37,9 @@ struct ContentView: View {
     
     var searchResults: [MotorVehicle] {
         if searchText.isEmpty {
-            return networkManager.filteredVehicles
+            return networkManager.motorVehicles
         } else {
-            return networkManager.filteredVehicles.filter { $0.Make_Name.localizedCaseInsensitiveContains(searchText) }
+            return networkManager.motorVehicles.filter { $0.MakeName.localizedCaseInsensitiveContains(searchText) }
         }
     }
 }

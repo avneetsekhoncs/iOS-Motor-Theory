@@ -11,16 +11,15 @@ import Foundation
 class NetworkManager: ObservableObject {
     
     // "Interested parties" will be notified of any changes
-    @Published var filteredVehicles = [MotorVehicle]()
+    //@Published var filteredVehicles = [MotorVehicle]()
     @Published var motorVehicleModels = [MotorVehicleModels]()
+    @Published var motorVehicles = [MotorVehicle]()
     
-    var motorVehicles = [MotorVehicle]()
-    
-    let keepArray = ["AUDI", "BENTLEY", "FORD", "HONDA", "NISSAN"]
+    //let keepArray = ["AUDI", "BENTLEY", "FORD", "HONDA", "NISSAN"]
     
     func fetchData() {
         //The url I am going to request to
-        if let url = URL(string: "https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json") {
+        if let url = URL(string: "https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json") {
             //Setup to get data from endpoint
             let session = URLSession(configuration: .default)
             let dataTask = session.dataTask(with: url) { data, response, error in
@@ -32,9 +31,9 @@ class NetworkManager: ObservableObject {
                             let decoded = try decoder.decode(ResultsData.self, from: safeData)
                             DispatchQueue.main.async {
                                 self.motorVehicles = decoded.Results
-                                self.filteredVehicles = self.motorVehicles.filter { motorVehicle in
+                                /*self.filteredVehicles = self.motorVehicles.filter { motorVehicle in
                                     self.keepArray.contains(motorVehicle.Make_Name)
-                                }
+                                }*/
                             }
                         } catch {
                             print(error)
@@ -49,7 +48,7 @@ class NetworkManager: ObservableObject {
     
     func fetchModelData(makeName: String) {
         //The url I am going to request to
-        if let url = URL(string: "https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformake/\(makeName)?format=json") {
+        if let url = URL(string: "https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/\(makeName)/vehicleType/car?format=json") {
             //Setup to get data from endpoint
             let session = URLSession(configuration: .default)
             let dataTask = session.dataTask(with: url) { data, response, error in
