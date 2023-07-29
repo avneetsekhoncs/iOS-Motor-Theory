@@ -11,7 +11,6 @@ struct ContentView: View {
     
     //Listens for changes to motorVehicles in NetworkManager
     @ObservedObject var networkManager = NetworkManager()
-    
     @State private var searchText = ""
     
     var body: some View {
@@ -23,16 +22,15 @@ struct ContentView: View {
                     //vehicleMake is passed to the destination
                     NavigationLink(destination: ModelView(vehicleMake: mV.MakeName)) {
                         // The Make's name fills each row
-                        Text(mV.MakeName.capitalized)
+                        Text(mV.MakeName)
                     }
                 }
             }
-            .navigationTitle("Motor Theory")
+            .navigationTitle("MOTOR THEORY")
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
         }
-        .onAppear {
-            networkManager.fetchData()
-        }
+        .tint(.orange)
+        .onAppear { networkManager.fetchData() }
     }
     
     var searchResults: [MotorVehicle] {

@@ -11,7 +11,6 @@ struct ModelView: View {
     
     //Listens for changes to motorVehicles in NetworkManager
     @ObservedObject var networkManager = NetworkManager()
-    
     @State private var searchModel = ""
     
     let vehicleMake: String
@@ -35,7 +34,7 @@ struct ModelView: View {
                     }
                 }
             }
-            .navigationTitle(vehicleMake.capitalized)
+            .navigationTitle(vehicleMake)
             .searchable(text: $searchModel, placement: .navigationBarDrawer(displayMode: .always))
         }
         .onAppear {

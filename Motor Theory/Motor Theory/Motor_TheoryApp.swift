@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct Motor_TheoryApp: App {
+    
+    init() {
+        UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).adjustsFontSizeToFitWidth = true
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()
